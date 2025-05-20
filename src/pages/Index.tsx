@@ -7,28 +7,28 @@ import { Link } from "react-router-dom";
 export default function Index() {
   return (
     <div className="flex flex-col min-h-screen dark">
-      {/* Hero Section */}
+
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-background to-background/50 z-0"></div>
         <div className="grid-pattern absolute inset-0 opacity-[0.03] z-0"></div>
-        
+
         <div className="container-content relative z-10 py-16 md:py-24 lg:py-32">
           <div className="max-w-3xl mx-auto text-center space-y-8">
             <div className="inline-flex items-center px-3 py-1 rounded-full border text-sm font-medium mb-4 animate-fade-in">
               <span className="flex h-2 w-2 rounded-full bg-neon-green mr-2"></span>
               <span>Now supporting multiple local LLM formats</span>
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight gradient-heading animate-slide-up">
               Build Smart Chatbots.<br />
               Your Data. Your Control.
             </h1>
-            
+
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-slide-up [animation-delay:200ms]">
               Create, train, and deploy custom chatbots using local LLMs. Keep your data private
               while building intelligent conversational experiences.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 animate-slide-up [animation-delay:400ms]">
               <Button size="lg" asChild>
                 <Link to="/builder">
@@ -36,14 +36,14 @@ export default function Index() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              
+
               <Button size="lg" variant="outline" className="group" asChild>
                 <Link to="#">
                   <PlayCircle className="mr-2 h-4 w-4 group-hover:text-primary transition-colors" />
                   Watch Demo
                 </Link>
               </Button>
-              
+
               <Button size="lg" variant="secondary" asChild>
                 <Link to="/models">Choose a Model</Link>
               </Button>
@@ -51,7 +51,7 @@ export default function Index() {
           </div>
         </div>
       </section>
-      
+
       {/* How It Works Section */}
       <section className="section bg-card">
         <div className="container-content">
@@ -61,7 +61,7 @@ export default function Index() {
               Build your custom chatbot in three simple steps with our intuitive platform
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {[
               {
@@ -100,7 +100,7 @@ export default function Index() {
           </div>
         </div>
       </section>
-      
+
       {/* Demo Bots Section */}
       <section className="section">
         <div className="container-content">
@@ -110,23 +110,23 @@ export default function Index() {
               Experience the capabilities of our platform with these pre-built bots
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { 
-                title: "Customer Support Bot", 
+              {
+                title: "Customer Support Bot",
                 description: "Handles common questions about products and services.",
                 badge: "Basic",
                 badgeColor: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300"
               },
               {
-                title: "Technical Assistant", 
+                title: "Technical Assistant",
                 description: "Provides coding help and technical documentation.",
                 badge: "Advanced",
                 badgeColor: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300"
               },
               {
-                title: "Content Writer", 
+                title: "Content Writer",
                 description: "Generates marketing copy and creative content.",
                 badge: "Pro",
                 badgeColor: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300"
@@ -152,7 +152,7 @@ export default function Index() {
               </Card>
             ))}
           </div>
-          
+
           <div className="text-center mt-10">
             <Button size="lg" asChild>
               <Link to="/models">
@@ -163,7 +163,7 @@ export default function Index() {
           </div>
         </div>
       </section>
-      
+
       {/* Trust & Security Section */}
       <section className="section bg-card">
         <div className="container-content">
@@ -172,7 +172,7 @@ export default function Index() {
             <p className="text-muted-foreground">
               BotForge is designed with privacy at its core. Your data never leaves your environment.
             </p>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
               {[
                 {
@@ -203,7 +203,7 @@ export default function Index() {
           </div>
         </div>
       </section>
-      
+
       {/* CTA Section */}
       <section className="section">
         <div className="container-content max-w-5xl">

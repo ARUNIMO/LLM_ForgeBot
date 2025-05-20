@@ -1,18 +1,18 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { 
+import {
   CheckCircle2,
-  ChevronDown, 
-  Clock, 
-  Code2, 
-  Download, 
-  Filter, 
-  Layers, 
+  ChevronDown,
+  Clock,
+  Code2,
+  Download,
+  Filter,
+  Layers,
   Cpu, // Changed from Memory to Cpu which is available in lucide
-  Search, 
-  Star, 
-  Zap 
+  Search,
+  Star,
+  Zap
 } from "lucide-react";
 
 export default function Models() {
@@ -104,7 +104,7 @@ export default function Models() {
           </p>
         </div>
       </section>
-      
+
       {/* Filter Bar */}
       <section className="border-y bg-background/50 backdrop-blur-sm sticky top-16 z-30">
         <div className="container-content py-3">
@@ -114,7 +114,7 @@ export default function Models() {
                 <Filter className="h-4 w-4" />
                 Filters
               </Button>
-              
+
               <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
                 <Button variant="outline" size="sm" className="gap-1.5">
                   Size
@@ -134,7 +134,7 @@ export default function Models() {
                 </Button>
               </div>
             </div>
-            
+
             <div className="relative">
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
               <input
@@ -146,7 +146,7 @@ export default function Models() {
           </div>
         </div>
       </section>
-      
+
       {/* Model Grid */}
       <section className="flex-1 py-12">
         <div className="container-content">
@@ -168,7 +168,7 @@ export default function Models() {
                     </div>
                     <span className="label-badge bg-secondary font-mono">{model.size}</span>
                   </div>
-                  
+
                   <div className="mt-4 space-y-2">
                     <div className="flex items-center text-sm text-muted-foreground">
                       <Clock className="h-4 w-4 mr-2" />
@@ -183,7 +183,7 @@ export default function Models() {
                       <span>License: {model.license}</span>
                     </div>
                   </div>
-                  
+
                   <div className="mt-4">
                     <h4 className="text-sm font-medium mb-2">Capabilities</h4>
                     <ul className="space-y-1">
@@ -209,7 +209,7 @@ export default function Models() {
               </Card>
             ))}
           </div>
-          
+
           <div className="mt-12 text-center">
             <h3 className="text-lg font-medium mb-4">Don't see what you need?</h3>
             <Button variant="outline" className="gap-2">
@@ -219,7 +219,7 @@ export default function Models() {
           </div>
         </div>
       </section>
-      
+
       {/* Compare Models Section */}
       <section className="section bg-card">
         <div className="container-content text-center">

@@ -23,7 +23,7 @@ export default function Builder() {
   const [formality, setFormality] = useState([50]);
   const [creativity, setCreativity] = useState([70]);
   const [conciseness, setConciseness] = useState([30]);
-  
+
   const steps = [
     { number: 1, title: "Choose Model" },
     { number: 2, title: "Upload Data" },
@@ -55,7 +55,7 @@ export default function Builder() {
           </p>
         </div>
       </section>
-      
+
       {/* Stepper */}
       <section className="border-y bg-background/50 backdrop-blur-sm sticky top-16 z-30">
         <div className="container-content py-4">
@@ -63,19 +63,18 @@ export default function Builder() {
             {steps.map((step) => (
               <div key={step.number} className="flex flex-col items-center flex-1">
                 <div className={`flex items-center justify-center w-8 h-8 rounded-full mb-1
-                  ${activeStep === step.number 
-                    ? 'bg-primary text-primary-foreground' 
-                    : activeStep > step.number 
-                      ? 'bg-primary/20 text-primary' 
+                  ${activeStep === step.number
+                    ? 'bg-primary text-primary-foreground'
+                    : activeStep > step.number
+                      ? 'bg-primary/20 text-primary'
                       : 'bg-secondary text-muted-foreground'}`}
                 >
                   {step.number}
                 </div>
-                <span className={`text-xs hidden sm:block ${
-                  activeStep === step.number 
-                    ? 'text-foreground font-medium' 
+                <span className={`text-xs hidden sm:block ${activeStep === step.number
+                    ? 'text-foreground font-medium'
                     : 'text-muted-foreground'
-                }`}>
+                  }`}>
                   {step.title}
                 </span>
               </div>
@@ -83,7 +82,7 @@ export default function Builder() {
           </div>
         </div>
       </section>
-      
+
       {/* Main Content */}
       <section className="flex-1 py-8">
         <div className="container-content">
@@ -92,7 +91,7 @@ export default function Builder() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <div className="lg:col-span-2">
                 <h2 className="text-xl font-semibold mb-4">Select a Base Model</h2>
-                
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[
                     {
@@ -144,10 +143,10 @@ export default function Builder() {
                     </Card>
                   ))}
                 </div>
-                
+
                 <div className="mt-8">
                   <h2 className="text-xl font-semibold mb-4">Choose Bot Type</h2>
-                  
+
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     {[
                       {
@@ -182,7 +181,7 @@ export default function Builder() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="lg:col-span-1">
                 <h2 className="text-xl font-semibold mb-4">Hardware Requirements</h2>
                 <Card>
@@ -196,7 +195,7 @@ export default function Builder() {
                         <div className="bg-primary h-2 rounded-full w-[40%]"></div>
                       </div>
                     </div>
-                    
+
                     <div>
                       <div className="flex justify-between text-sm mb-1">
                         <span>Required CPU</span>
@@ -206,7 +205,7 @@ export default function Builder() {
                         <div className="bg-primary h-2 rounded-full w-[30%]"></div>
                       </div>
                     </div>
-                    
+
                     <div>
                       <div className="flex justify-between text-sm mb-1">
                         <span>Est. Training Time</span>
@@ -216,14 +215,14 @@ export default function Builder() {
                         <div className="bg-primary h-2 rounded-full w-[25%]"></div>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center text-sm text-muted-foreground mt-4">
                       <AlertCircle className="h-4 w-4 mr-2" />
                       <span>GPU will significantly speed up training</span>
                     </div>
                   </CardContent>
                 </Card>
-                
+
                 <div className="mt-6">
                   <h3 className="text-lg font-medium mb-3">Need Help?</h3>
                   <div className="bg-card p-4 rounded-lg border">
@@ -240,13 +239,13 @@ export default function Builder() {
               </div>
             </div>
           )}
-          
+
           {/* Step 2: Upload Data */}
           {activeStep === 2 && (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <div className="lg:col-span-2">
                 <h2 className="text-xl font-semibold mb-4">Upload Training Data</h2>
-                
+
                 <Card className="mb-6">
                   <CardContent className="p-6">
                     <div className="border-2 border-dashed rounded-lg p-8 text-center">
@@ -259,14 +258,14 @@ export default function Builder() {
                     </div>
                   </CardContent>
                 </Card>
-                
+
                 <Tabs defaultValue="sources">
                   <TabsList className="mb-4">
                     <TabsTrigger value="sources">Data Sources</TabsTrigger>
                     <TabsTrigger value="formats">Supported Formats</TabsTrigger>
                     <TabsTrigger value="preprocess">Preprocessing</TabsTrigger>
                   </TabsList>
-                  
+
                   <TabsContent value="sources">
                     <div className="space-y-4">
                       <h3 className="text-lg font-medium">Recommended Data Sources</h3>
@@ -290,7 +289,7 @@ export default function Builder() {
                       </ul>
                     </div>
                   </TabsContent>
-                  
+
                   <TabsContent value="formats">
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                       {["PDF", "TXT", "CSV", "JSON", "DOCX", "XLSX"].map((format) => (
@@ -300,7 +299,7 @@ export default function Builder() {
                       ))}
                     </div>
                   </TabsContent>
-                  
+
                   <TabsContent value="preprocess">
                     <div className="space-y-4">
                       <p className="text-sm text-muted-foreground">
@@ -311,7 +310,7 @@ export default function Builder() {
                   </TabsContent>
                 </Tabs>
               </div>
-              
+
               <div className="lg:col-span-1">
                 <h2 className="text-xl font-semibold mb-4">Data Guidelines</h2>
                 <Card>
@@ -339,7 +338,7 @@ export default function Builder() {
                         </li>
                       </ul>
                     </div>
-                    
+
                     <div className="pt-2">
                       <h3 className="text-sm font-medium mb-2">Data Privacy Note</h3>
                       <p className="text-xs text-muted-foreground">
@@ -349,7 +348,7 @@ export default function Builder() {
                     </div>
                   </CardContent>
                 </Card>
-                
+
                 <div className="mt-6">
                   <h3 className="text-lg font-medium mb-3">Data Upload Limit</h3>
                   <Card>
@@ -370,13 +369,13 @@ export default function Builder() {
               </div>
             </div>
           )}
-          
+
           {/* Step 3: Customize Personality */}
           {activeStep === 3 && (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <div className="lg:col-span-2">
                 <h2 className="text-xl font-semibold mb-4">Customize Bot Personality</h2>
-                
+
                 <Card className="mb-6">
                   <CardContent className="pt-6 px-6">
                     <div className="space-y-6">
@@ -400,7 +399,7 @@ export default function Builder() {
                           <span>Formal</span>
                         </div>
                       </div>
-                      
+
                       <div>
                         <div className="flex justify-between mb-2">
                           <div>
@@ -421,7 +420,7 @@ export default function Builder() {
                           <span>Creative</span>
                         </div>
                       </div>
-                      
+
                       <div>
                         <div className="flex justify-between mb-2">
                           <div>
@@ -442,7 +441,7 @@ export default function Builder() {
                           <span>Detailed</span>
                         </div>
                       </div>
-                      
+
                       <div className="pt-2 pb-6">
                         <label className="text-sm font-medium block mb-2">Bot Name</label>
                         <input
@@ -452,7 +451,7 @@ export default function Builder() {
                           defaultValue="CustomSpecialist"
                         />
                       </div>
-                      
+
                       <div className="pt-2 pb-6">
                         <label className="text-sm font-medium block mb-2">System Prompt</label>
                         <textarea
@@ -467,7 +466,7 @@ export default function Builder() {
                     </div>
                   </CardContent>
                 </Card>
-                
+
                 <div className="flex items-center gap-2 text-sm">
                   <Button variant="outline" size="sm" className="gap-1.5">
                     <RotateCcw className="h-3.5 w-3.5" />
@@ -479,10 +478,10 @@ export default function Builder() {
                   </Button>
                 </div>
               </div>
-              
+
               <div className="lg:col-span-1">
                 <h2 className="text-xl font-semibold mb-4">Preview Response Style</h2>
-                
+
                 <Card className="mb-6">
                   <CardHeader className="pb-2">
                     <CardTitle className="text-base">Chat Preview</CardTitle>
@@ -493,7 +492,7 @@ export default function Builder() {
                         How do I reset my password for the admin portal?
                       </p>
                     </div>
-                    
+
                     <div className="bg-primary/10 rounded-lg p-3 border-l-2 border-primary">
                       <p className="text-sm">
                         To reset your password for the admin portal, please follow these steps:
@@ -510,7 +509,7 @@ export default function Builder() {
                     </div>
                   </CardContent>
                 </Card>
-                
+
                 <div>
                   <h3 className="text-lg font-medium mb-3">Advanced Settings</h3>
                   <Card>
@@ -529,7 +528,7 @@ export default function Builder() {
                           step="0.1"
                         />
                       </div>
-                      
+
                       <div className="flex items-center justify-between">
                         <div>
                           <label className="text-sm font-medium">Max Tokens</label>
@@ -543,7 +542,7 @@ export default function Builder() {
                           step="1"
                         />
                       </div>
-                      
+
                       <div className="flex items-center justify-between">
                         <div>
                           <label className="text-sm font-medium">Context Window</label>
@@ -563,7 +562,7 @@ export default function Builder() {
               </div>
             </div>
           )}
-          
+
           {/* Step 4-5: Simple placeholder for now */}
           {activeStep === 4 && (
             <div className="text-center py-16">
@@ -575,7 +574,7 @@ export default function Builder() {
               </Button>
             </div>
           )}
-          
+
           {activeStep === 5 && (
             <div className="text-center py-16">
               <h2 className="text-2xl font-bold mb-4">Export Your Bot</h2>
@@ -588,12 +587,12 @@ export default function Builder() {
           )}
         </div>
       </section>
-      
+
       {/* Bottom Navigation */}
       <section className="border-t bg-card py-4 sticky bottom-0">
         <div className="container-content flex justify-between">
-          <Button 
-            variant="outline" 
+          <Button
+            variant="outline"
             onClick={prevStep}
             disabled={activeStep === 1}
             className="gap-2"
@@ -601,7 +600,7 @@ export default function Builder() {
             <ArrowLeft className="h-4 w-4" />
             Previous
           </Button>
-          
+
           <Button
             onClick={nextStep}
             disabled={activeStep === steps.length}
