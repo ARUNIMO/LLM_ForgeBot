@@ -12,7 +12,7 @@ import {
 
 export default function Pricing() {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">("monthly");
-  
+
   const pricingPlans = [
     {
       name: "Free",
@@ -78,31 +78,30 @@ export default function Pricing() {
           </p>
         </div>
       </section>
-      
+
       {/* Billing Toggle */}
       <section className="pt-8 pb-4">
         <div className="container-content text-center">
           <div className="flex items-center justify-center space-x-4">
-            <span 
+            <span
               className={`cursor-pointer ${billingCycle === "monthly" ? "text-primary font-medium" : "text-muted-foreground"}`}
               onClick={() => setBillingCycle("monthly")}
             >
               Monthly
             </span>
-            
-            <div 
+
+            <div
               className="w-12 h-6 bg-secondary rounded-full p-1 cursor-pointer"
               onClick={() => setBillingCycle(billingCycle === "monthly" ? "yearly" : "monthly")}
             >
-              <div 
-                className={`w-4 h-4 rounded-full transition-transform duration-300 ${
-                  billingCycle === "yearly" ? "bg-primary translate-x-6" : "bg-primary translate-x-0"
-                }`}
+              <div
+                className={`w-4 h-4 rounded-full transition-transform duration-300 ${billingCycle === "yearly" ? "bg-primary translate-x-6" : "bg-primary translate-x-0"
+                  }`}
               />
             </div>
-            
+
             <div className="flex items-center">
-              <span 
+              <span
                 className={`cursor-pointer ${billingCycle === "yearly" ? "text-primary font-medium" : "text-muted-foreground"}`}
                 onClick={() => setBillingCycle("yearly")}
               >
@@ -115,17 +114,16 @@ export default function Pricing() {
           </div>
         </div>
       </section>
-      
+
       {/* Pricing Cards */}
       <section className="flex-1 pb-16">
         <div className="container-content">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {pricingPlans.map((plan, index) => (
-              <Card 
+              <Card
                 key={index}
-                className={`relative overflow-hidden ${
-                  plan.popular ? 'border-primary shadow-lg' : 'glass-card'
-                }`}
+                className={`relative overflow-hidden ${plan.popular ? 'border-primary shadow-lg' : 'glass-card'
+                  }`}
               >
                 {plan.popular && (
                   <div className="absolute top-0 right-0">
@@ -134,7 +132,7 @@ export default function Pricing() {
                     </div>
                   </div>
                 )}
-                
+
                 <CardHeader>
                   <CardTitle>{plan.name}</CardTitle>
                   <p className="text-sm text-muted-foreground">{plan.description}</p>
@@ -145,7 +143,7 @@ export default function Pricing() {
                     )}
                   </div>
                 </CardHeader>
-                
+
                 <CardContent className="space-y-4">
                   <h4 className="text-sm font-medium">Includes:</h4>
                   <ul className="space-y-2">
@@ -162,7 +160,7 @@ export default function Pricing() {
                           <span className={feature.included ? '' : 'text-muted-foreground'}>
                             {feature.text}
                           </span>
-                          
+
                           <Tooltip>
                             <TooltipTrigger asChild>
                               <Info className="h-3.5 w-3.5 ml-1.5 text-muted-foreground cursor-help" />
@@ -176,10 +174,10 @@ export default function Pricing() {
                     </TooltipProvider>
                   </ul>
                 </CardContent>
-                
+
                 <CardFooter>
-                  <Button 
-                    className="w-full" 
+                  <Button
+                    className="w-full"
                     variant={plan.popular ? "default" : "outline"}
                   >
                     {plan.cta}
@@ -190,12 +188,12 @@ export default function Pricing() {
           </div>
         </div>
       </section>
-      
+
       {/* FAQ */}
       <section className="section bg-card">
         <div className="container-content max-w-3xl">
           <h2 className="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
-          
+
           <div className="grid gap-6">
             {[
               {
@@ -228,7 +226,7 @@ export default function Pricing() {
               </div>
             ))}
           </div>
-          
+
           <div className="mt-10 text-center">
             <p className="text-muted-foreground mb-4">
               Have more questions about our pricing or need a custom plan?
